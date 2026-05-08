@@ -12,6 +12,11 @@ export default function WeddingGiftSite() {
     { name: 'Ajuda para a lua de mel', value: 'R$ 300', image: '/presente-luademel.jpg' },
     { name: 'Presente premium para começar o lar', value: 'R$ 500', image: '/presente-lar-premium.jpg' },
   ]
+  const photos = [
+  '/foto-casal-2.jpg',
+  '/foto-casal-3.jpg',
+  '/foto-casal-4.jpg',
+]
 
   const [reservedGifts, setReservedGifts] = useState(() => {
     if (typeof window === 'undefined') return []
@@ -60,6 +65,22 @@ export default function WeddingGiftSite() {
           </div>
         </div>
       </section>
+      <section className="max-w-6xl mx-auto px-6 pb-10">
+  <div className="grid md:grid-cols-3 gap-5">
+    {photos.map((photo, index) => (
+      <div
+        key={index}
+        className="rounded-3xl overflow-hidden shadow-sm bg-white border border-slate-100 hover:-translate-y-1 transition-transform"
+      >
+        <img
+          src={photo}
+          alt="Galeria do casal"
+          className="w-full h-72 object-cover"
+        />
+      </div>
+    ))}
+  </div>
+</section>
 
       <section className="max-w-6xl mx-auto px-6 pb-6">
         <div className="flex gap-3 flex-wrap">
